@@ -6,7 +6,7 @@
 #include <Arduino.h>
 
 
-int TEMP_PIN_A = 14;
+int TEMP_PIN_A = 16;
 int TEMP_PIN_B = 15;
 
 unsigned long CURRENTMILLIS;

@@ -34,32 +34,14 @@ void loop() {
 
     ntc1LastCheck = CURRENTMILLIS;
 
-    log();
-    //Serial.print("tempratureA");
-    //Serial.print(",");
-    //Serial.print(tempA);
-    //Serial.print(",");
-    //Serial.println();
-    //Serial.print("time,");
-    //Serial.print(CURRENTMILLIS);
+    log();              //## log temprature values in CSV Format for excel Data stream plugin
 
   }
-  //if (CURRENTMILLIS - ntc2LastCheck >= tempratureInterval){
-   // tempB = temprature(TEMP_PIN_B);
-   // ntc2LastCheck = CURRENTMILLIS;
-    //Serial.print("tempratureB");
-    //Serial.print(",");
-    //Serial.print(tempB);
-    //Serial.print(",");
-    //Serial.println();
-    //Serial.print("time  ");
-    //Serial.print(CURRENTMILLIS);
-    
-  
+
 }
 
 
-float temprature(int pin){
+float temprature(int pin){   //## function to convert voltage to temprature //##
   int _pin = pin;
   int Vo;
   float logR2, R2, T;
@@ -77,7 +59,7 @@ float temprature(int pin){
 
 }
 
-void log(){ //designed for excel data stream
+void log(){ //designed for excel data stream AKA CSV
     Serial.print("tempratureA");
     Serial.print(",");
     Serial.print(tempA);
@@ -86,6 +68,6 @@ void log(){ //designed for excel data stream
     Serial.print(",");
     Serial.print(tempB);
     Serial.print(",");
-    Serial.println();
+    Serial.println();     //#very important to start new line For excel Data Stream //##
   return;
 }
